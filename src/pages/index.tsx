@@ -31,7 +31,12 @@ const Home = (props: HomeProps) => {
   return (
     <HomeContainer ref={sliderRef} className="keen-slider">
       {props.products.map((product) => (
-        <Product key={product.id} className="keen-slider__slide">
+        <Product
+          prefetch={false}
+          href={`/product/${product.id}`}
+          key={product.id}
+          className="keen-slider__slide"
+        >
           <Image src={product.imageUrl} width={520} height={480} alt="" />
 
           <footer>
